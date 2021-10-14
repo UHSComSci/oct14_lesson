@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oct14_app/columndemo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -73,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text("hi"),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -102,6 +103,14 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            OutlinedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                    return ColumnDemo();
+                  }));
+                },
+                child: Text("go"))
           ],
         ),
       ),
